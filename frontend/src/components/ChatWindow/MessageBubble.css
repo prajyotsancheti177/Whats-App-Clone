@@ -1,0 +1,122 @@
+.message-bubble-wrapper {
+    display: flex;
+    margin-bottom: 2px;
+    animation: fadeIn 0.2s ease;
+}
+
+.message-bubble-wrapper.outgoing {
+    justify-content: flex-end;
+}
+
+.message-bubble-wrapper.incoming {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    max-width: 65%;
+    padding: 6px 7px 8px 9px;
+    border-radius: 7.5px;
+    position: relative;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+}
+
+.message-bubble.outgoing {
+    background-color: var(--bubble-outgoing);
+    border-top-right-radius: 0;
+}
+
+.message-bubble.incoming {
+    background-color: var(--bubble-incoming);
+    border-top-left-radius: 0;
+}
+
+.message-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.message-text {
+    font-size: 14.2px;
+    line-height: 19px;
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.message-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    margin-left: 8px;
+    flex-shrink: 0;
+    position: relative;
+    top: 5px;
+}
+
+.message-time {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.status-icon {
+    margin-left: 2px;
+}
+
+.status-icon.sent,
+.status-icon.delivered {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.status-icon.failed {
+    color: #f15c6d;
+}
+
+/* Bubble Tail */
+.bubble-tail {
+    position: absolute;
+    top: 0;
+    width: 8px;
+    height: 13px;
+}
+
+.bubble-tail.outgoing {
+    right: -8px;
+}
+
+.bubble-tail.outgoing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 8px solid var(--bubble-outgoing);
+    border-top: 6px solid transparent;
+    border-bottom: 7px solid transparent;
+}
+
+.bubble-tail.incoming {
+    left: -8px;
+}
+
+.bubble-tail.incoming::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-right: 8px solid var(--bubble-incoming);
+    border-top: 6px solid transparent;
+    border-bottom: 7px solid transparent;
+}
+
+/* First message in a sequence (show tail) */
+.message-bubble-wrapper:first-child .bubble-tail,
+.message-bubble-wrapper:not(.outgoing)+.message-bubble-wrapper.outgoing .bubble-tail,
+.message-bubble-wrapper:not(.incoming)+.message-bubble-wrapper.incoming .bubble-tail {
+    display: block;
+}
+
+/* Hide tail for consecutive messages from same direction */
+.message-bubble-wrapper.outgoing+.message-bubble-wrapper.outgoing .bubble-tail,
+.message-bubble-wrapper.incoming+.message-bubble-wrapper.incoming .bubble-tail {
+    display: none;
+}

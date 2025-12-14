@@ -1,0 +1,148 @@
+.sidebar {
+    width: var(--sidebar-width);
+    min-width: 300px;
+    max-width: 500px;
+    height: 100vh;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.sidebar-header {
+    height: var(--header-height);
+    padding: 10px 16px;
+    background-color: var(--bg-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-avatar {
+    cursor: pointer;
+}
+
+.avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background-color: var(--bg-secondary);
+}
+
+.connection-status.connected {
+    color: var(--accent-green);
+}
+
+.connection-status.disconnected {
+    color: #f15c6d;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.icon-btn:hover {
+    background-color: var(--bg-hover);
+}
+
+/* Search */
+.search-container {
+    padding: 8px 12px;
+    background-color: var(--bg-secondary);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-tertiary);
+    border-radius: 8px;
+    padding: 0 12px;
+    height: 36px;
+}
+
+.search-icon {
+    color: var(--text-muted);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+}
+
+.search-box input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Contacts List */
+.contacts-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.no-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: var(--text-muted);
+}
+
+.no-contacts p {
+    margin-bottom: 16px;
+}
+
+.start-chat-btn {
+    padding: 10px 20px;
+    background-color: var(--accent-green);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.start-chat-btn:hover {
+    background-color: var(--accent-green-hover);
+}

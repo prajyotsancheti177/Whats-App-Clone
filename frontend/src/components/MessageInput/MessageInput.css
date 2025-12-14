@@ -1,0 +1,117 @@
+.message-input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    background-color: var(--bg-tertiary);
+    gap: 8px;
+}
+
+.input-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 0 8px;
+    min-height: 42px;
+}
+
+.emoji-container {
+    position: relative;
+}
+
+.input-icon-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    flex-shrink: 0;
+}
+
+.input-icon-btn:hover {
+    color: var(--text-primary);
+}
+
+.emoji-picker {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    animation: fadeIn 0.2s ease;
+}
+
+.emoji-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.emoji-btn:hover {
+    background-color: var(--bg-hover);
+}
+
+.input-form {
+    flex: 1;
+    display: flex;
+}
+
+.input-form input {
+    width: 100%;
+    padding: 9px 12px;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 15px;
+    outline: none;
+}
+
+.input-form input::placeholder {
+    color: var(--text-muted);
+}
+
+.send-btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    background-color: var(--accent-green);
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, opacity 0.2s;
+    flex-shrink: 0;
+}
+
+.send-btn:hover:not(:disabled) {
+    background-color: var(--accent-green-hover);
+}
+
+.send-btn:disabled {
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    cursor: default;
+}
